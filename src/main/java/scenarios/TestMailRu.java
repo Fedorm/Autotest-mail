@@ -1,7 +1,10 @@
 package scenarios;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Test;
 import pages.LettersPageMailRu;
 import pages.LoginPageMailRu;
 import utils.BrowserFactory;
@@ -21,6 +24,7 @@ public class TestMailRu {
     LettersPageMailRu lettersPageMailRu;
 
     WebDriver driver;
+
     @BeforeSuite
     public void setupTest() {
         driver = new BrowserFactory().getDriver(browserModel);
@@ -31,10 +35,11 @@ public class TestMailRu {
     }
 
     @AfterTest
-    public void logOut(){
+    public void logOut() {
         LettersPageMailRu lettersPageMailRu = new LettersPageMailRu(driver);
         lettersPageMailRu.logout();
     }
+
     @AfterSuite
     public void teardown() {
 //        if (driver != null) {
@@ -46,7 +51,7 @@ public class TestMailRu {
     @Test(priority = 1)
     public void testValidLogin() {
         loginPageMailRu.loginAs(username, password);
-          }
+    }
 
     @Test(priority = 2)
     public void openMail() {

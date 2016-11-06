@@ -28,7 +28,6 @@ public class LoginPageMailRu {
     }
 
 
-
     public LoginPageMailRu submitLogin() {
         driver.findElement(loginButtonLocator).submit();
         return this;
