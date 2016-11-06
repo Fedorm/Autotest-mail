@@ -28,23 +28,23 @@ public class LettersPageMailRu {
         return this;
     }
 
-    public LettersPageMailRu openMail() {
-        Assert.assertTrue(driver.findElement(senderTextLocator).getText().equals("Федор Михайлович"));
+    public LettersPageMailRu openLetter(String sender) {
+        Assert.assertTrue(driver.findElement(senderTextLocator).getText().equals(sender));
         driver.findElement(senderTextLocator).click();
     return this;
 }
 
-    public LettersPageMailRu verifyAuthor() {
-        Assert.assertTrue(driver.findElement(letterAuthorLocator).getText().equals("Федор Михайлович <malyshko.fm@yandex.ru>"));
+    public LettersPageMailRu verifyAuthor(String sender) {
+        Assert.assertTrue(driver.findElement(letterAuthorLocator).getText().contains(sender));
         return this;
     }
-    public LettersPageMailRu verifySubject() {
+    public LettersPageMailRu verifySubject(String subject) {
 //        try {
 //            Assert.assertTrue(driver.findElement(letterSubjectLocator).getText().equals("Тестовое задание"));
 //        } catch (Throwable AssertionError) {
 //            System.out.println("The subject line does not correct");
 //        }
-        Assert.assertTrue(driver.findElement(letterSubjectLocator).getText().equals("Тестовое задание"));
+        Assert.assertTrue(driver.findElement(letterSubjectLocator).getText().equals(subject));
         return this;
     }
 

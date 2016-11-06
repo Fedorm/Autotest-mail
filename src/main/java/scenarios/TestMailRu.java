@@ -13,9 +13,10 @@ import java.util.concurrent.TimeUnit;
  */
 public class TestMailRu {
     public static String browserModel = "chrome";
-    public static String mailClient = "http://mail.ru";
     public static String username = "testcrystals";
     public static String password = "123qazwer";
+    public static String sender = "Федор Михайлович";
+    public static String subject = "Тестовое задание";
     LoginPageMailRu loginPageMailRu;
     LettersPageMailRu lettersPageMailRu;
 
@@ -24,7 +25,7 @@ public class TestMailRu {
     public void setupTest() {
         driver = new BrowserFactory().getDriver(browserModel);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get(mailClient);
+        driver.get("http://mail.ru");
         loginPageMailRu = new LoginPageMailRu(driver);
         lettersPageMailRu = new LettersPageMailRu(driver);
     }
@@ -36,9 +37,9 @@ public class TestMailRu {
     }
     @AfterSuite
     public void teardown() {
-        if (driver != null) {
-            driver.quit();
-        }
+//        if (driver != null) {
+//            driver.quit();
+//        }
     }
 
 
@@ -49,14 +50,14 @@ public class TestMailRu {
 
     @Test(priority = 2)
     public void openMail() {
-        lettersPageMailRu.openMail();
+        lettersPageMailRu.openLetter(sender);
 
     }
 
     @Test(priority = 3)
     public void checkMail() {
-        lettersPageMailRu.verifyAuthor();
-        lettersPageMailRu.verifySubject();
+        lettersPageMailRu.verifyAuthor(sender);
+        lettersPageMailRu.verifySubject(subject);
         lettersPageMailRu.verifyBody();
     }
 
