@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="3" passed="3">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Tests" duration-ms="8814" started-at="2016-11-06T22:45:11Z" finished-at="2016-11-06T22:45:20Z">
+    <groups>
+    </groups>
+    <test name="Test1" duration-ms="8814" started-at="2016-11-06T22:45:11Z" finished-at="2016-11-06T22:45:20Z">
+      <class name="scenarios.TestMailRu">
+        <test-method status="PASS" signature="setupTest()[pri:0, instance:scenarios.TestMailRu@5f2050f6]" name="setupTest" is-config="true" duration-ms="5114" started-at="2016-11-07T01:45:06Z" finished-at="2016-11-07T01:45:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupTest -->
+        <test-method status="PASS" signature="testValidLogin()[pri:1, instance:scenarios.TestMailRu@5f2050f6]" name="testValidLogin" duration-ms="224" started-at="2016-11-07T01:45:11Z" finished-at="2016-11-07T01:45:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testValidLogin -->
+        <test-method status="PASS" signature="openMail()[pri:2, instance:scenarios.TestMailRu@5f2050f6]" name="openMail" duration-ms="6652" started-at="2016-11-07T01:45:11Z" finished-at="2016-11-07T01:45:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openMail -->
+        <test-method status="PASS" signature="checkMail()[pri:3, instance:scenarios.TestMailRu@5f2050f6]" name="checkMail" duration-ms="655" started-at="2016-11-07T01:45:18Z" finished-at="2016-11-07T01:45:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkMail -->
+        <test-method status="PASS" signature="logOut()[pri:0, instance:scenarios.TestMailRu@5f2050f6]" name="logOut" is-config="true" duration-ms="1260" started-at="2016-11-07T01:45:19Z" finished-at="2016-11-07T01:45:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logOut -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:scenarios.TestMailRu@5f2050f6]" name="teardown" is-config="true" duration-ms="1119" started-at="2016-11-07T01:45:20Z" finished-at="2016-11-07T01:45:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- scenarios.TestMailRu -->
+    </test> <!-- Test1 -->
+  </suite> <!-- Tests -->
+</testng-results>

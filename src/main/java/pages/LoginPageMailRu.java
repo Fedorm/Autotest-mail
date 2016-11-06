@@ -15,10 +15,6 @@ public class LoginPageMailRu {
 
     public LoginPageMailRu(WebDriver driver) {
         this.driver = driver;
-
-        if (!"Mail.Ru: почта, поиск в интернете, новости, игры".equals(driver.getTitle())) {
-            throw new IllegalStateException("This is not the login page");
-        }
     }
 
     public LoginPageMailRu typeUsername(String username) {

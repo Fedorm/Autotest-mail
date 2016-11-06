@@ -1,0 +1,5 @@
+TestNgTestBase.class
+pages\LettersPageMailRu.class
+scenarios\TestMailRu.class
+pages\LoginPageMailRu.class
+utils\BrowserFactory.class
