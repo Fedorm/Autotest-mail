@@ -14,8 +14,8 @@ import pages.LoginPageMailRu;
 import utils.BrowserFactory;
 
 import static pages.LettersPageMailRu.letterAuthorLocator;
-import static pages.LettersPageMailRu.letterBodyLocator;
 import static pages.LettersPageMailRu.letterSubjectLocator;
+import static pages.LettersPageMailRu.locator;
 
 public class TestMailRu {
 	public static String browserModel = "chrome";
@@ -46,7 +46,8 @@ public class TestMailRu {
 		lettersPageMailRu.openLetter();
 		Assert.assertTrue(driver.findElement(letterAuthorLocator).getText().contains(sender));
 		Assert.assertTrue(driver.findElement(letterSubjectLocator).getText().equals(subject));
-		Assert.assertTrue(driver.findElement(letterBodyLocator).getText().equals(body));
+//		Assert.assertTrue(driver.findElement(letterBodyLocator).getText().equals(body));
+		Assert.assertTrue(driver.findElement(locator(body)).isDisplayed());
 	}
 
 	@AfterTest
