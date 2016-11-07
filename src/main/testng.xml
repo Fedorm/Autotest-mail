@@ -3,7 +3,7 @@
 <suite name="Tests" verbose="5">
   <test name="Test1">
     <classes>
-      <class name="scenarios.TestMailRu"/>
+      <class name="TestMailRu"/>
 
     </classes>
   </test>  
