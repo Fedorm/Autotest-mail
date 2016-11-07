@@ -17,9 +17,6 @@ import static pages.LettersPageMailRu.letterAuthorLocator;
 import static pages.LettersPageMailRu.letterBodyLocator;
 import static pages.LettersPageMailRu.letterSubjectLocator;
 
-/**
- * Created by me on 11/6/2016.
- */
 public class TestMailRu {
 	public static String browserModel = "chrome";
 	public static String username = "testcrystals";
@@ -41,6 +38,17 @@ public class TestMailRu {
 		lettersPageMailRu = new LettersPageMailRu(driver);
 	}
 
+
+	@Test
+	public void testCheckMail() {
+		loginPageMailRu.loginAs(username, password);
+		Assert.assertTrue(driver.findElement(LettersPageMailRu.senderTextLocator).getText().equals(sender));
+		lettersPageMailRu.openLetter();
+		Assert.assertTrue(driver.findElement(letterAuthorLocator).getText().contains(sender));
+		Assert.assertTrue(driver.findElement(letterSubjectLocator).getText().equals(subject));
+		Assert.assertTrue(driver.findElement(letterBodyLocator).getText().equals(body));
+	}
+
 	@AfterTest
 	public void logOut() {
 		lettersPageMailRu.logout();
@@ -51,29 +59,6 @@ public class TestMailRu {
 		if (driver != null) {
 			driver.quit();
 		}
-	}
-
-
-	@Test(priority = 1)
-	public void testValidLogin() {
-		loginPageMailRu.loginAs(username, password);
-	}
-
-	@Test(priority = 2)
-	public void testOpenMail() {
-		Assert.assertTrue(driver.findElement(LettersPageMailRu.senderTextLocator).getText().equals(sender));
-		lettersPageMailRu.openLetter();
-	}
-
-	@Test(priority = 3)
-	public void testCheckMail() {
-		Assert.assertTrue(driver.findElement(letterAuthorLocator).getText().contains(sender));
-		Assert.assertTrue(driver.findElement(letterSubjectLocator).getText().equals(subject));
-		Assert.assertTrue(driver.findElement(letterBodyLocator).getText().equals(body));
-
-//		lettersPageMailRu.verifyAuthor(sender);
-//		lettersPageMailRu.verifySubject(subject);
-//		lettersPageMailRu.verifyBody(body);
 	}
 
 }

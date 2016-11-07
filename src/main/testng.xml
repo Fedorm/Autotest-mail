@@ -3,8 +3,7 @@
 <suite name="Tests" verbose="5">
   <test name="Test1">
     <classes>
-      <class name="TestMailRu"/>
-
+      <class name="ru.crystals.TestMailRu"/>
     </classes>
   </test>  
 </suite>

@@ -29,24 +29,4 @@ public class LettersPageMailRu {
 		return this;
 	}
 
-//	public LettersPageMailRu verifyAuthor(String sender) {
-//		Assert.assertTrue(driver.findElement(letterAuthorLocator).getText().contains(sender));
-//		return this;
-//	}
-//
-//	public LettersPageMailRu verifySubject(String subject) {
-////        try {
-////            Assert.assertTrue(driver.findElement(letterSubjectLocator).getText().equals("Тестовое задание"));
-////        } catch (Throwable AssertionError) {
-////            System.out.println("The subject line does not correct");
-////        }
-//		Assert.assertTrue(driver.findElement(letterSubjectLocator).getText().equals(subject));
-//		return this;
-//	}
-//
-//	public LettersPageMailRu verifyBody(String body) {
-//		Assert.assertTrue(driver.findElement(letterBodyLocator).getText().equals(body));
-//		return this;
-//	}
-
 }

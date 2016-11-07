@@ -3,9 +3,6 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-/**
- * Created by me on 11/5/2016.
- */
 public class LoginPageMailRu {
 	private final WebDriver driver;
 	By usernameLocator = By.id("mailbox__login");
