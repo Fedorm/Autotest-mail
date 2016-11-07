@@ -14,6 +14,8 @@ public class LettersPageMailRu {
     private By letterSubjectLocator = By.className("b-letter__head__subj__text");
 
     public LettersPageMailRu(WebDriver driver) {
+
+
         this.driver = driver;
     }
 

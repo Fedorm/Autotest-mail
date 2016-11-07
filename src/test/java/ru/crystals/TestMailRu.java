@@ -1,6 +1,8 @@
 package ru.crystals;
 
+import org.apache.xpath.SourceTree;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
@@ -17,8 +19,8 @@ public class TestMailRu {
     private String username = "testcrystals";
     private String password = "123qazwer";
     private String sender = "Федор Михайлович";
-    private String subject = "Здравствуйте";
-    private String body = "Приветствую вас! Как прошел Ваш день? С уважением";
+    private String subject = "TestCrystals HELLO!";
+    private String body = "HELLO How are you? I'm fine thank you";
     private LoginPageMailRu loginPageMailRu;
     private LettersPageMailRu lettersPageMailRu;
 
@@ -34,10 +36,16 @@ public class TestMailRu {
 
 
     @Test
+
     public void testCheckMail() {
         loginPageMailRu.openLoginPage();
         loginPageMailRu.loginAs(username, password);
-        Assert.assertEquals(lettersPageMailRu.getSenderTextLocator(), sender);
+        try {
+            Assert.assertEquals(lettersPageMailRu.getSenderTextLocator(), sender);
+        } catch (org.openqa.selenium.StaleElementReferenceException ex) {
+            System.out.println("Assert failed. Try Again");
+            Assert.assertEquals(lettersPageMailRu.getSenderTextLocator(), sender);
+        }
         lettersPageMailRu.openLetter();
         Assert.assertTrue(lettersPageMailRu.getLetterAuthorLocatorText().contains(sender));
         Assert.assertEquals(lettersPageMailRu.getLetterSubjectLocatorText(), subject);
