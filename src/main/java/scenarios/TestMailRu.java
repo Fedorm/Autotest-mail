@@ -20,6 +20,7 @@ public class TestMailRu {
     public static String password = "123qazwer";
     public static String sender = "Федор Михайлович";
     public static String subject = "Тестовое задание";
+    public static String body = "спасибо за встречу";
     LoginPageMailRu loginPageMailRu;
     LettersPageMailRu lettersPageMailRu;
 
@@ -42,9 +43,9 @@ public class TestMailRu {
 
     @AfterSuite
     public void teardown() {
-//        if (driver != null) {
-//            driver.quit();
-//        }
+        if (driver != null) {
+            driver.quit();
+        }
     }
 
 
@@ -63,7 +64,7 @@ public class TestMailRu {
     public void checkMail() {
         lettersPageMailRu.verifyAuthor(sender);
         lettersPageMailRu.verifySubject(subject);
-        lettersPageMailRu.verifyBody();
+        lettersPageMailRu.verifyBody(body);
     }
 
 }
