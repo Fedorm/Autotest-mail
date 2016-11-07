@@ -46,7 +46,6 @@ public class TestMailRu {
 		lettersPageMailRu.openLetter();
 		Assert.assertTrue(driver.findElement(letterAuthorLocator).getText().contains(sender));
 		Assert.assertTrue(driver.findElement(letterSubjectLocator).getText().equals(subject));
-//		Assert.assertTrue(driver.findElement(letterBodyLocator).getText().equals(body));
 		Assert.assertTrue(driver.findElement(locator(body)).isDisplayed());
 	}
 
